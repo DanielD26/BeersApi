@@ -32,3 +32,12 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    batchingBasedOnAgentsOption- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'BeersTests'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
